@@ -1,0 +1,36 @@
+.document {
+  background: var(--bgColor);
+  flex: 1;
+  height: calc(100vh - 6rem);
+  border: 2px solid var(--border1);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  width: calc(100% - 40rem);
+  &-inner{
+    background: var(--bgColor1);
+    text-align: center;
+    padding: 2rem 0;
+    border-radius: .6rem;
+    overflow: auto;
+    height: 100%;
+  }
+  &-zoom {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 42rem;
+  }
+  &-btn {
+    background: var(--bgColor);
+    padding: 1rem;
+    border-radius: 2rem;
+    border: .2rem solid #6f7c85;
+    button {
+      color: var(--primary);
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      font-size: 2.4rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  background: var(--bgColor);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.6rem;
+  &-mode {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+.toggle {
+  input {
+    display: none;
+
+    &:checked {
+      & + label {
+        background: var(--primary);
+
+        &::before {
+          transition: 0.4s;
+          transform: translate(15px, -50%);
+          background: var(--default);
+        }
+      }
+    }
+  }
+
+  &_btn {
+    position: relative;
+    border: 2px solid var(--primary);
+    width: 3rem;
+    height: 1.6rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4rem;
+    transition: 0.4s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 1rem;
+      border-radius: 50%;
+      height: 1rem;
+      transform: translate(2px, -50%);
+      top: 50%;
+      border-radius: 50%;
+      left: 0;
+      background: var(--primary);
+    }
+  }
+}

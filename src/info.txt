@@ -1,0 +1,5 @@
+Following are info abou the API
+
+1. pages.json are the list of pages that we render in the document viewer.
+2. bboxes.json has the bbox data for page 1.
+3. sections has the list of sections anf field on the left.
