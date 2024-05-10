@@ -24,3 +24,6 @@
     -- npm i
     -- npm run dev
 
+
+
+Note: There are 3 API dumps provided for the task, however I haven't used bbox api as mentioned in the assignment doc, as the other api dumps served the purpose of the assignment aptly.
