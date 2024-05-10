@@ -19,6 +19,14 @@ export default function DocumentPreviewer({ docInfo, docIndex }) {
     }
   }, [docInfo, zoom, currHoveredSection, rectanglesData]);
 
+
+  /**
+   * 
+   * @param {Number} zoom 
+   * @param {Object} currHoveredSection 
+   * @param {Array} rectanglesData 
+   * This function perform all the required tasks on Document. It takes iamge and draws it on canvas and updated it according to events
+   */
   const handleCanvas = (zoom, currHoveredSection, rectanglesData) => {
     let img = new Image();
     img.src = image;
@@ -66,6 +74,12 @@ export default function DocumentPreviewer({ docInfo, docIndex }) {
     };
   };
 
+  /**
+   * 
+   * @param {Object} event 
+   * @param {Number} zoom 
+   * This function handles mouse movements on rectangles drawn on canvas
+   */
   function handleMouseMove(event, zoom) {
     let rect = canvasRef.current.getBoundingClientRect();
 

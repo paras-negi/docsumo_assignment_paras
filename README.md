@@ -1,8 +1,26 @@
-# React + Vite
+# Review Screen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- The project is made using Vite and React
 
-Currently, two official plugins are available:
+- No third party libraries are being used.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- The website main page is kept under `pages` folder which has only one file `home.js`
+
+- The components used for building the webpage are placed in the `components` folder.
+
+- The API dumps are placed in the `db` folder and are imported statically in the `AppContext.js` page.
+
+- The styling is done on `Sass` or `SCSS`.
+
+- The `SCSS` code is written under style folder having `main.scss` as the main file importer and all the other styls has been written in `base.scss`, `document.scss`, `header.scss` and `sidebar.scss`. Each file is dedicated to the corresponding component.
+
+- The App state is managed by Context `AppContext.jsx`. So that there is a common controller for payloads and methods.
+
+- The project is hosted on Netlify and can be found at: [docsumo_assignment_paras](https://ds-assignment-paras.netlify.app/);
+
+- The Performance of the Webpage page on Lighthouse is 98-100.
+
+- Run the App by:
+    -- npm i
+    -- npm run dev
+

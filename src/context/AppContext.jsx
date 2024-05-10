@@ -7,20 +7,28 @@ const MainContext = createContext();
 
 export default function AppContext({ children }) {
   const [contextData, setContextData] = useState(initialContextData);
-  const [theme, setTheme] = useState({label: "Dark Mode" , value: "dm"});
+  const [theme, setTheme] = useState({ label: "Dark Mode", value: "dm" });
 
   useEffect(() => {
     getPagesData();
+    detectSystemTheme();
+  }, []);
+
+  const detectSystemTheme = () =>{
     if (window.matchMedia) {
-      // Detects system theme
+      // Detects system theme, by default it will pick syatem theme and update the page theme accordingly
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         handleTheme({}, "dark");
       } else {
         handleTheme({}, "light");
       }
     }
-  }, []);
+  }
 
+
+/**
+ * Import section data from db folder
+ */
   const getSectionsData = async () => {
     const { data } = sectionsData || {};
     let { sections } = data || {};
@@ -28,11 +36,20 @@ export default function AppContext({ children }) {
     createRectanglesWithColors(usableData);
   };
 
+  /**
+   * Import pages data from db folder
+   */
   const getPagesData = () => {
     const { data } = pagesInfo || {};
     setContextData({ ...contextData, pagesData: data });
   };
 
+  /**
+   * 
+   * @param {Array} data 
+   * @returns 
+   * This function will create an array with corresponing colors for the Sidebar and Rectangles on canvas
+   */
   const createRectanglesWithColors = (data) => {
     if (!data || !data.length) return;
     let rectanglesData = data.map((item) => {
@@ -78,11 +95,11 @@ export default function AppContext({ children }) {
 
   const handleTheme = (event, theme) => {
     let html = document.querySelector("html");
-    console.log({html});
+    console.log({ html });
 
     if (!html) return;
     html.setAttribute("data-theme", theme);
-    setTheme({label: themes[theme], value: theme});
+    setTheme({ label: themes[theme], value: theme });
   };
 
   return (
@@ -97,7 +114,7 @@ export default function AppContext({ children }) {
         updateSelectedFields,
         updateHoveredSection,
         updateSidebarAndRectangles,
-        handleTheme
+        handleTheme,
       }}
     >
       {children}
